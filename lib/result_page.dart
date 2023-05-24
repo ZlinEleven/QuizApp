@@ -35,33 +35,33 @@ class ResultPage extends StatelessWidget {
     }).length;
 
     return Container(
-      margin: const EdgeInsets.all(40),
-      child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'You answered $correctQuestions out of $totalQuestions questions correctly!',
-              style: GoogleFonts.lato(
-                color: const Color.fromARGB(209, 229, 200, 238),
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.center,
+      margin: const EdgeInsets.all(45),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'You answered $correctQuestions out of $totalQuestions questions correctly!',
+            style: GoogleFonts.lato(
+              color: const Color.fromARGB(209, 229, 200, 238),
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
             ),
-            const SizedBox(height: 30),
-            QuestionsSummary(summaryData: summary),
-            const SizedBox(height: 30),
-            TextButton.icon(
-              onPressed: () {
-                onPressedRestartQuiz();
-              },
-              icon: const Icon(Icons.restart_alt),
-              label: const Text('Restart Quiz!'),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 30),
+          QuestionsSummary(summaryData: summary),
+          const SizedBox(height: 30),
+          TextButton.icon(
+            onPressed: () {
+              onPressedRestartQuiz();
+            },
+            icon: const Icon(Icons.restart_alt),
+            label: const Text('Restart Quiz!'),
+            style: TextButton.styleFrom(
+              foregroundColor: Colors.white,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
